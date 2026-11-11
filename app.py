@@ -13,7 +13,7 @@ import build_page
 import classifier
 from data import store
 
-st.set_page_config(page_title="Midterms 101 · Workbench", page_icon="🗳️", layout="wide",
+st.set_page_config(page_title="Midterms 101", page_icon="🗳️", layout="wide",
                    initial_sidebar_state="collapsed")
 
 # Tokens shared with page/template.html
@@ -109,45 +109,42 @@ if "flash" in st.session_state:  # a message from before the last rerun
 d, r, i, u = senate_totals(results)
 h, g = results["house"], results["governors"]
 
-# --- Masthead ---------------------------------------------------------------
-st.markdown(
-    f'<div class="masthead"><div class="eyebrow">2026 U.S. midterms · as of {results["as_of_label"]}</div>'
-    + ('<h1>Midterms 101 · Workbench</h1>'
-       '<p class="lede">The results behind the guide, a labeler for <span class="w-now">statements that challenge the count</span>, '
-       'and the button that rebuilds the page. Labels a person has checked are the only ones that reach readers.</p></div>'
-       if EDIT else
-       '<h1>Midterms 101 · The results</h1>'
-       '<p class="lede">Every Senate race, the House and governors, and how far each state moved from 2024. '
-       'Results are unofficial until states certify.</p></div>'),
-    unsafe_allow_html=True,
-)
-st.markdown(
-    '<div class="cards">'
-    f'<div class="card"><div class="name">Senate</div><div class="big"><span class="w-d">{d} D</span> · <span class="w-r">{r} R</span></div>'
-    f'<div class="sub">{u} uncalled · 51 for control</div>{bar([(d, C["D"]), (u, C["ink3"]), (r, C["R"])], 100)}</div>'
-    f'<div class="card"><div class="name">House</div><div class="big"><span class="w-d">{h["D"]} D</span> · <span class="w-r">{h["R"]} R</span></div>'
-    f'<div class="sub">{h["uncalled"]} uncalled · 218 for control</div>{bar([(h["D"], C["D"]), (h["uncalled"], C["ink3"]), (h["R"], C["R"])], 435)}</div>'
-    f'<div class="card"><div class="name">Governors</div><div class="big"><span class="w-d">{g["D"]} D</span> · <span class="w-r">{g["R"]} R</span></div>'
-    f'<div class="sub">{g["uncalled"]} uncalled · {len(g["flips"])} flipped to Democrats</div>{bar([(g["D"], C["D"]), (g["uncalled"], C["ink3"]), (g["R"], C["R"])], 50)}</div>'
-    "</div>",
-    unsafe_allow_html=True,
-)
+# --- Masthead (workbench only: on the public site the guide has its own) -------
+if EDIT:
+    st.markdown(
+        f'<div class="masthead"><div class="eyebrow">2026 U.S. midterms · as of {results["as_of_label"]}</div>'
+        '<h1>Midterms 101 · Workbench</h1>'
+        '<p class="lede">The guide, a labeler for <span class="w-now">statements that challenge the count</span>, '
+        'and the button that rebuilds the page. Labels a person has checked are the only ones that reach readers.</p></div>',
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        '<div class="cards">'
+        f'<div class="card"><div class="name">Senate</div><div class="big"><span class="w-d">{d} D</span> · <span class="w-r">{r} R</span></div>'
+        f'<div class="sub">{u} uncalled · 51 for control</div>{bar([(d, C["D"]), (u, C["ink3"]), (r, C["R"])], 100)}</div>'
+        f'<div class="card"><div class="name">House</div><div class="big"><span class="w-d">{h["D"]} D</span> · <span class="w-r">{h["R"]} R</span></div>'
+        f'<div class="sub">{h["uncalled"]} uncalled · 218 for control</div>{bar([(h["D"], C["D"]), (h["uncalled"], C["ink3"]), (h["R"], C["R"])], 435)}</div>'
+        f'<div class="card"><div class="name">Governors</div><div class="big"><span class="w-d">{g["D"]} D</span> · <span class="w-r">{g["R"]} R</span></div>'
+        f'<div class="sub">{g["uncalled"]} uncalled · {len(g["flips"])} flipped to Democrats</div>{bar([(g["D"], C["D"]), (g["uncalled"], C["ink3"]), (g["R"], C["R"])], 50)}</div>'
+        "</div>",
+        unsafe_allow_html=True,
+    )
 
-# Public viewers get the results and the published statements; the labeler and Publish exist only locally.
-tabs = st.tabs(["The results", "Senate races", "Label statements" if EDIT else "Statements"] + (["Publish"] if EDIT else []))
+# Public viewers get the guide, the Senate table and the published statements; the labeler and Publish exist only locally.
+tabs = st.tabs(["The guide", "Senate races", "Label statements" if EDIT else "Statements"] + (["Publish"] if EDIT else []))
 tab_page, tab_races, tab_label = tabs[:3]
 tab_publish = tabs[3] if EDIT else None
 
-# --- The results (the page's Part 2, embedded) ---------------------------------
+# --- The guide: the whole Midterms 101 page --------------------------------------
 with tab_page:
+    # "site" mode: the page grows its frame to its own height and drops the live classifier box,
+    # which only works inside the Claude viewer.
     page = build_page.render().replace(
-        "<title>", '<script>document.documentElement.classList.add("embed")</script><title>', 1)
-    components.html(page, height=1500, scrolling=True)
+        "<title>", '<script>document.documentElement.classList.add("site")</script><title>', 1)
+    components.html(page, height=2400, scrolling=False)
     if EDIT:
-        st.caption("Part 2 of the page, drawn from data/results.json and the statements you've verified. "
-                   "It updates as soon as you save labels; the published page updates when you rebuild and republish it.")
-    else:
-        st.caption(f"AP vote counts as of {results['as_of_label']}. Unofficial until states certify.")
+        st.caption("The whole page, drawn from data/results.json and the statements you've verified. "
+                   "It updates as soon as you save labels.")
 
 # --- Senate races ----------------------------------------------------------------
 with tab_races:

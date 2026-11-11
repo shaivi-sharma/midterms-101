@@ -278,6 +278,10 @@ footer a{color:var(--ink-2)}
 /* Embedded in the Streamlit app: Part 2 only, and no live classifier (the app classifies in Python) */
 html.embed header.wrap, html.embed #basics, html.embed #meaning, html.embed footer.wrap, html.embed .composer{display:none}
 html.embed #results{padding-block:8px 12px}
+/* The whole guide on the public Streamlit site: no live classifier (it only works in the Claude viewer),
+   the selected statement shown read-only */
+html.site .composer > label[for=stmtText], html.site .composer > .tools{display:none}
+html.site #stmtText{resize:none;cursor:default}
 </style>
 
 <header class="wrap">
@@ -843,7 +847,8 @@ $("stmtRun").onclick=async()=>{
   }finally{running=null;$("stmtRun").textContent="Classify with Claude";}
 };
 $("copyPrompt").onclick=async()=>{try{await navigator.clipboard.writeText($("promptText").textContent);$("copyPrompt").textContent="Copied";}catch(_){const s=getSelection(),rg=document.createRange();rg.selectNodeContents($("promptText"));s.removeAllRanges();s.addRange(rg);$("copyPrompt").textContent="Selected, press Ctrl/Cmd+C";}};
-(async()=>{if(document.documentElement.classList.contains("embed"))return;let s=null;try{s=window.claude&&window.claude.use?await window.claude.use("sample"):null;}catch(_){s=null;}
+(async()=>{const cl=document.documentElement.classList;if(cl.contains("embed"))return;
+  if(cl.contains("site")){$("stmtText").readOnly=true;return;}let s=null;try{s=window.claude&&window.claude.use?await window.claude.use("sample"):null;}catch(_){s=null;}
   sampleFn=s; $("stmtRun").disabled=!s;
   $("stmtStatus").textContent=s?"Uses your Claude account. Claude asks for permission the first time.":"Live classification works only inside the Claude viewer. The expected labels are shown instead.";})();
 
@@ -870,5 +875,38 @@ $("swingSort").addEventListener("click",e=>{const b=e.target.closest("button");i
 renderTerm();renderChambers();renderKeys();renderImpeach();
 showView("map");
 renderBop();renderFlips();renderTiles();renderDetail();renderTable();renderOpen();renderSwing();renderFeed();renderLabels();
+})();
+</script>
+<script>
+(function(){
+  if(!document.documentElement.classList.contains("site"))return;
+  var f=null; try{f=window.frameElement;}catch(e){}
+  if(!f)return;
+  var fit=function(){
+    var h=Math.ceil(document.documentElement.getBoundingClientRect().height)+"px";
+    f.style.height=h;
+    // Streamlit sizes the frame's wrapper to the height given in Python; grow it too, so nothing below overlaps
+    if(f.parentElement&&f.parentElement.classList.contains("stElementContainer"))f.parentElement.style.height=h;
+  };
+  if(window.ResizeObserver)new ResizeObserver(fit).observe(document.documentElement);
+  window.addEventListener("load",fit); fit();
+  // The frame is as tall as the page, so the outer page does the scrolling. Send in-page jumps
+  // (the part links, table of contents, "open on the map") to the outer scroller.
+  var outerScroller=function(){
+    var w=f.ownerDocument.defaultView, e=f.parentElement;
+    while(e){var o=w.getComputedStyle(e).overflowY;
+      if((o==="auto"||o==="scroll")&&e.scrollHeight>e.clientHeight)return e; e=e.parentElement;}
+    return null;
+  };
+  var goTo=function(y){
+    var s=outerScroller(), top=f.getBoundingClientRect().top+y-12;
+    if(s)s.scrollTo({top:s.scrollTop+top,behavior:"smooth"}); else window.parent.scrollBy({top:top,behavior:"smooth"});
+  };
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a)return;
+    var t=document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1))); if(!t)return;
+    e.preventDefault(); goTo(t.getBoundingClientRect().top);
+  });
+  window.addEventListener("scroll",function(){var y=window.scrollY; if(!y)return; window.scrollTo(0,0); goTo(y);});
 })();
 </script>

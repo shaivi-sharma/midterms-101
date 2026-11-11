@@ -4,7 +4,7 @@ A beginner's guide to the 2026 U.S. midterms, plus the Streamlit workbench behin
 
 - **The page** (`page/`) is *Midterms 101*: a static, self-contained guide in three parts (the basics, the results, what it means). `build_page.py` writes its data into `page/template.html` and saves the result as `page/index.html`, the file that's published as the artifact.
 - **The workbench** (`app.py`) is a Streamlit app with four tabs:
-  - **The results**: Part 2 of the page, embedded.
+  - **The guide**: the whole Midterms 101 page. The frame grows to the page's height, and the guide's section links scroll the outer page.
   - **Senate races**: a sortable table and a chart of each state's 2024 presidential margin against its 2026 Senate margin.
   - **Label statements**: runs the election-statement classifier on real statements, flags labels that change between runs, and lets a person correct and verify them.
   - **Publish**: rebuilds the page.
@@ -24,7 +24,7 @@ The key is only needed for the **Label statements** tab. `secrets.toml` is git-i
 
 ## Editing only works on your computer
 
-Adding, classifying and verifying statements, and rebuilding the page, only work when you open the app at `localhost`. Anywhere else, including a hosted copy (anything running from `/mount/src/`, which is where Streamlit Community Cloud puts apps) or your network address, public viewers see only three tabs: The results, Senate races, and Statements (verified statements, read-only). The labeler and Publish tabs don't exist there. There are two reasons:
+Adding, classifying and verifying statements, and rebuilding the page, only work when you open the app at `localhost`. Anywhere else, including a hosted copy (anything running from `/mount/src/`, which is where Streamlit Community Cloud puts apps) or your network address, public viewers see only three tabs: The guide, Senate races, and Statements (verified statements, read-only). The Streamlit site is the one public link; the claude.ai artifact is a private preview. The labeler and Publish tabs don't exist there. There are two reasons:
 
 - On a public app, every visitor who clicks Classify would spend your API key.
 - Streamlit Community Cloud wipes saved files when the app restarts, so labels saved there would be lost.
@@ -59,7 +59,7 @@ classifier.py RULES ─┘          │
 ```
 
 - `classifier.py` holds the **only copy of the classifier rules**. The workbench sends them to Claude (`claude-opus-5-5`, low effort, JSON schema output, server-side refusal fallback). The build writes the same rules into the page, so its "Show the prompt" box always matches.
-- **Embed mode:** the workbench adds an `embed` class to the page. That hides the masthead, Parts 1 and 3, the footer, and the live "Classify with Claude" box, since that box only works inside the Claude viewer.
+- **Site mode:** the app adds a `site` class to the page. The page then sizes its Streamlit frame to its own height, sends its section links to the outer page, and hides the live "Classify with Claude" box, which only works inside the Claude viewer. The selected statement and its labels still show.
 - `data/statements.json` is the labeler's working set. Each statement stores Claude's majority labels, every individual run, any labels that changed between runs, rule violations (for example `integrity_challenge` 0 while a source label is 1), a person's labels, and a `verified` flag.
 
 ## Updating the results
