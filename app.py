@@ -1,6 +1,7 @@
 """Midterms 101 workbench: the results, a statement labeler, and the button that rebuilds the page."""
 
 import os
+from pathlib import Path
 
 import anthropic
 import pandas as pd
@@ -57,6 +58,11 @@ def senate_totals(res):
             sum(1 for r in s if r["status"] == "open"))
 
 
+# Streamlit Community Cloud runs apps from /mount/src/<repo>. Checked first, so a hosted copy is
+# read-only whatever address it was opened with.
+HOSTED = Path(__file__).resolve().as_posix().startswith("/mount/src/")
+
+
 def can_edit() -> bool:
     """Labeling, classifying and rebuilding only work when the app runs on your own computer.
 
@@ -64,6 +70,8 @@ def can_edit() -> bool:
     files saved there are wiped when the app restarts, so the hosted app is read-only. Set
     MIDTERMS_EDIT=1 to force editing on, for example in tests.
     """
+    if HOSTED:
+        return False
     if os.environ.get("MIDTERMS_EDIT") == "1":
         return True
     try:
@@ -104,9 +112,13 @@ h, g = results["house"], results["governors"]
 # --- Masthead ---------------------------------------------------------------
 st.markdown(
     f'<div class="masthead"><div class="eyebrow">2026 U.S. midterms · as of {results["as_of_label"]}</div>'
-    '<h1>Midterms 101 · Workbench</h1>'
-    '<p class="lede">The results behind the guide, a labeler for <span class="w-now">statements that challenge the count</span>, '
-    'and the button that rebuilds the page. Labels a person has checked are the only ones that reach readers.</p></div>',
+    + ('<h1>Midterms 101 · Workbench</h1>'
+       '<p class="lede">The results behind the guide, a labeler for <span class="w-now">statements that challenge the count</span>, '
+       'and the button that rebuilds the page. Labels a person has checked are the only ones that reach readers.</p></div>'
+       if EDIT else
+       '<h1>Midterms 101 · The results</h1>'
+       '<p class="lede">Every Senate race, the House and governors, and how far each state moved from 2024. '
+       'Results are unofficial until states certify.</p></div>'),
     unsafe_allow_html=True,
 )
 st.markdown(
@@ -121,15 +133,21 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-tab_page, tab_races, tab_label, tab_publish = st.tabs(["The results", "Senate races", "Label statements", "Publish"])
+# Public viewers get the results and the published statements; the labeler and Publish exist only locally.
+tabs = st.tabs(["The results", "Senate races", "Label statements" if EDIT else "Statements"] + (["Publish"] if EDIT else []))
+tab_page, tab_races, tab_label = tabs[:3]
+tab_publish = tabs[3] if EDIT else None
 
 # --- The results (the page's Part 2, embedded) ---------------------------------
 with tab_page:
     page = build_page.render().replace(
         "<title>", '<script>document.documentElement.classList.add("embed")</script><title>', 1)
     components.html(page, height=1500, scrolling=True)
-    st.caption("Part 2 of the page, drawn from data/results.json and the statements you've verified. "
-               "It updates as soon as you save labels; the published page updates when you rebuild and republish it.")
+    if EDIT:
+        st.caption("Part 2 of the page, drawn from data/results.json and the statements you've verified. "
+                   "It updates as soon as you save labels; the published page updates when you rebuild and republish it.")
+    else:
+        st.caption(f"AP vote counts as of {results['as_of_label']}. Unofficial until states certify.")
 
 # --- Senate races ----------------------------------------------------------------
 with tab_races:
@@ -191,15 +209,15 @@ with tab_races:
 with tab_label:
     rows = store.load_statements()
     if not EDIT:
-        st.info("Labeling is turned off on the hosted app, so nobody can spend the API key or change the labels. "
-                "Run the app on your own computer to add, classify and verify statements, then push data/statements.json.")
+        st.caption("Statements about the 2026 count from candidates, campaigns and officials. Claude suggested the labels; "
+                   "a person checked every one.")
         public = [x for x in rows if x.get("verified") and x.get("human") and not x.get("fictional")]
         if public:
             st.dataframe(pd.DataFrame([{"Statement": x["text"], "Speaker": x.get("speaker", ""), "Race": x.get("race", ""),
                                         "Labels (checked by a person)": names(x["human"]), "Claude said": names(x["claude"])}
                                        for x in public]), hide_index=True, width="stretch")
         else:
-            st.caption("No real statements have been verified yet.")
+            st.caption("No statements have been published yet.")
     else:
         st.subheader("1 · Add statements")
         a, b = st.columns(2)
@@ -305,36 +323,38 @@ with tab_label:
                 st.rerun()
 
     done = [x for x in rows if x.get("claude")]
-    st.subheader("How often Claude agrees with a person")
-    checked = [x for x in done if x.get("verified") and x.get("human")]
-    if not checked:
-        st.caption("Verify some statements to see agreement.")
-    else:
-        agree = pd.DataFrame([{
-            "Label": n,
-            "Agree": f"{sum(x['claude'][k] == x['human'][k] for x in checked) / len(checked):.0%}",
-            "Claude 1, you 0": sum(x["claude"][k] == 1 and x["human"][k] == 0 for x in checked),
-            "Claude 0, you 1": sum(x["claude"][k] == 0 and x["human"][k] == 1 for x in checked),
-        } for k, n in classifier.LABELS])
-        st.dataframe(agree, hide_index=True, width="stretch")
-        st.caption(f"Over {len(checked)} verified statement{'s' if len(checked) != 1 else ''}. "
-                   "Read every disagreement before trusting the counts.")
+    if EDIT:
+        st.subheader("How often Claude agrees with a person")
+        checked = [x for x in done if x.get("verified") and x.get("human")]
+        if not checked:
+            st.caption("Verify some statements to see agreement.")
+        else:
+            agree = pd.DataFrame([{
+                "Label": n,
+                "Agree": f"{sum(x['claude'][k] == x['human'][k] for x in checked) / len(checked):.0%}",
+                "Claude 1, you 0": sum(x["claude"][k] == 1 and x["human"][k] == 0 for x in checked),
+                "Claude 0, you 1": sum(x["claude"][k] == 0 and x["human"][k] == 1 for x in checked),
+            } for k, n in classifier.LABELS])
+            st.dataframe(agree, hide_index=True, width="stretch")
+            st.caption(f"Over {len(checked)} verified statement{'s' if len(checked) != 1 else ''}. "
+                       "Read every disagreement before trusting the counts.")
 
     with st.expander("The prompt Claude gets"):
         st.code(classifier.RULES, language=None, wrap_lines=True)
 
 # --- Publish ---------------------------------------------------------------------
-with tab_publish:
-    shown = store.for_page(store.load_statements())
-    real = bool(shown) and not shown[0].get("fictional")
-    st.markdown(f"The page will show **{len(shown)} {'verified real statements' if real else 'fictional examples'}**"
-                f"{'' if real else ' (no real statements are verified yet)'}.")
-    for p in build_page.check(results):
-        st.warning(p)
-    if EDIT and st.button("Rebuild page/index.html", type="primary"):
-        html = build_page.render()
-        (build_page.PAGE / "index.html").write_text(html, encoding="utf-8")
-        st.success(f"Wrote page/index.html ({len(html):,} bytes).")
-    st.download_button("Download the page", build_page.render(), file_name="index.html", mime="text/html")
-    st.caption("To update the published Midterms 101 artifact, ask Claude to republish page/index.html to it. "
-               "The prose in Parts 1 and 3 is written by hand in page/template.html and doesn't follow the data.")
+if EDIT:
+    with tab_publish:
+        shown = store.for_page(store.load_statements())
+        real = bool(shown) and not shown[0].get("fictional")
+        st.markdown(f"The page will show **{len(shown)} {'verified real statements' if real else 'fictional examples'}**"
+                    f"{'' if real else ' (no real statements are verified yet)'}.")
+        for p in build_page.check(results):
+            st.warning(p)
+        if EDIT and st.button("Rebuild page/index.html", type="primary"):
+            html = build_page.render()
+            (build_page.PAGE / "index.html").write_text(html, encoding="utf-8")
+            st.success(f"Wrote page/index.html ({len(html):,} bytes).")
+        st.download_button("Download the page", build_page.render(), file_name="index.html", mime="text/html")
+        st.caption("To update the published Midterms 101 artifact, ask Claude to republish page/index.html to it. "
+                   "The prose in Parts 1 and 3 is written by hand in page/template.html and doesn't follow the data.")

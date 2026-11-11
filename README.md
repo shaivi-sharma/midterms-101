@@ -24,7 +24,7 @@ The key is only needed for the **Label statements** tab. `secrets.toml` is git-i
 
 ## Editing only works on your computer
 
-Adding, classifying and verifying statements, and rebuilding the page, only work when you open the app at `localhost`. Anywhere else, including a hosted copy or your network address, the app is read-only: it shows the results, the verified statements and the agreement table, with no buttons. There are two reasons:
+Adding, classifying and verifying statements, and rebuilding the page, only work when you open the app at `localhost`. Anywhere else, including a hosted copy (anything running from `/mount/src/`, which is where Streamlit Community Cloud puts apps) or your network address, public viewers see only three tabs: The results, Senate races, and Statements (verified statements, read-only). The labeler and Publish tabs don't exist there. There are two reasons:
 
 - On a public app, every visitor who clicks Classify would spend your API key.
 - Streamlit Community Cloud wipes saved files when the app restarts, so labels saved there would be lost.
