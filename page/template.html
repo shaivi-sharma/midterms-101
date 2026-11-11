@@ -240,6 +240,7 @@ tr.clickable:hover td{background:var(--bg)}
 .lcell .v{font-family:var(--f-data);color:var(--ink-3)}
 .lcell .miss{color:var(--r-t)}
 .why{font-family:var(--f-prose);font-size:17px;line-height:1.45}
+.srclink{font-family:var(--f-data);font-size:12px;color:var(--ink-2);white-space:nowrap}
 .promptbox summary{cursor:pointer;font-size:14px;color:var(--ink-2)}
 .promptbox pre{white-space:pre-wrap;font-family:var(--f-data);font-size:11.5px;line-height:1.6;background:var(--bg);border-radius:12px;padding:14px;max-height:320px;overflow:auto;color:var(--ink-2)}
 
@@ -564,7 +565,7 @@ html.embed #results{padding-block:8px 12px}
 
 <footer class="wrap">
   <p>Results: AP vote counts as of 9 p.m. ET, Nov. 8, 2026, compiled by the <a href="https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/" target="_blank" rel="noopener">California Today results guide</a>, checked against race calls from <a href="https://www.cbsnews.com/live-updates/senate-election-results-2026/" target="_blank" rel="noopener">CBS News (Senate)</a> and <a href="https://www.cbsnews.com/live-updates/house-election-results-2026/" target="_blank" rel="noopener">CBS News (House)</a>, and totals from <a href="https://www.nbcnews.com/politics/2026-elections/senate-results" target="_blank" rel="noopener">NBC News</a> and <a href="https://www.kcra.com/article/us-senate-election-results-2026-midterms/74277023" target="_blank" rel="noopener">KCRA</a>. Exit poll figure from CBS News. Results are unofficial until certified. Vote shares may not add to 100 because of other candidates. 2024 presidential margins are approximate.</p>
-  <p>The question-by-question format is inspired by Luce's "The Midterm Elections, Explained" on Substack. Visualization types come from AP's U.S. Elections Dashboard catalog, page structure from Al Jazeera's and Bloomberg's results pages, and the styling from <em>The Economy Feels Fine</em>. The Statements tab uses fictional examples.</p>
+  <p>The question-by-question format is inspired by Luce's "The Midterm Elections, Explained" on Substack. Visualization types come from AP's U.S. Elections Dashboard catalog, page structure from Al Jazeera's and Bloomberg's results pages, and the styling from <em>The Economy Feels Fine</em>. <span id="stmtCredit">The Statements tab uses fictional examples.</span></p>
 </footer>
 
 <script>const DATA=/*DATA*/;</script>
@@ -810,7 +811,7 @@ Reply with only a JSON object with these keys: ${LABELS.map(l=>`"${l[0]}"`).join
 let exIdx=0, results={}, sampleFn=null, running=null;
 EXAMPLES.forEach(e=>{if(e.claude)results[e.t]=Object.assign({why:e.why},e.claude);});
 $("promptText").textContent=promptFor("{statement}");
-const _v=()=>{if(VERIFIED.length){$("feedHead").textContent=`${VERIFIED.length} real statement${VERIFIED.length===1?"":"s"} · labels checked by a person`;VIEWS.statements[0]="Real statements from the count, labeled by Claude and checked by a person. Pick one to compare the labels.";}};
+const _v=()=>{if(VERIFIED.length){$("stmtCredit").textContent="The Statements tab shows real statements made Nov. 3 to 10, 2026, each linked to its source. Claude suggested the labels and a person checked every one.";$("feedHead").textContent=`${VERIFIED.length} real statement${VERIFIED.length===1?"":"s"} · labels checked by a person`;VIEWS.statements[0]="Real statements from the count, labeled by Claude and checked by a person. Pick one to compare the labels.";}};
 $("stmtText").value=EXAMPLES[0].t;
 function renderFeed(){
   $("feed").innerHTML=EXAMPLES.map((e,i)=>{const challenge=e.exp[0]===1, ok=e.exp[5]===1;const c=challenge?"var(--now-t)":ok?"var(--ok-t)":"var(--ink-3)";
@@ -823,7 +824,8 @@ function renderLabels(){
     const parts=[]; if(e!=null)parts.push((VERIFIED.length?"person ":"expected ")+e); if(g!=null)parts.push("Claude "+g);
     const miss=e!=null&&g!=null&&e!==g;
     return `<div class="lcell ${v?"on":""} ${j===5?"ok":""}"><i></i><span class="n">${name}</span><span class="d">${desc}</span><span class="v">${parts.join(" · ")||"not classified yet"}${miss?' <span class="miss">· disagrees</span>':""}</span></div>`;}).join("");
-  const why=$("stmtWhy"); if(got&&got.why){why.hidden=false;why.textContent=String(got.why);} else why.hidden=true;
+  const why=$("stmtWhy"); if(got&&got.why){why.hidden=false;why.textContent="Claude: "+String(got.why);} else why.hidden=true;
+  if(ex&&ex.url&&/^https:\/\//.test(ex.url)){const a=document.createElement("a");a.href=ex.url;a.target="_blank";a.rel="noopener";a.className="srclink";a.textContent="Source"+(ex.race?" · "+ex.race:"");why.hidden=false;why.appendChild(document.createTextNode(" "));why.appendChild(a);}
 }
 $("feed").addEventListener("click",e=>{const b=e.target.closest(".fitem");if(!b)return;exIdx=+b.dataset.i;$("stmtText").value=EXAMPLES[exIdx].t;renderFeed();renderLabels();});
 $("stmtText").addEventListener("input",()=>{const t=$("stmtText").value.trim();const i=EXAMPLES.findIndex(e=>e.t===t);exIdx=i<0?null:i;renderFeed();renderLabels();});

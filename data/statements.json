@@ -53,7 +53,7 @@
    "intimidation": 0,
    "accepts_result": 1
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "3d9ad94e8e",
@@ -107,9 +107,9 @@
    "source_outside": 0,
    "process_action": 0,
    "intimidation": 0,
-   "accepts_result": 1
+   "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "c148c637c8",
@@ -165,7 +165,7 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "4addb6ea0a",
@@ -221,7 +221,7 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "7671312f22",
@@ -277,7 +277,7 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "1894dc4ac1",
@@ -333,7 +333,7 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "c9aad3c041",
@@ -389,7 +389,7 @@
    "intimidation": 0,
    "accepts_result": 1
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "5a62f138e1",
@@ -445,7 +445,7 @@
    "intimidation": 0,
    "accepts_result": 1
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "ec548be5d5",
@@ -503,7 +503,7 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "a00aad1aad",
@@ -559,7 +559,7 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "945bb02da8",
@@ -615,7 +615,7 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "f51cd23e2c",
@@ -671,7 +671,7 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "f71d012a70",
@@ -727,7 +727,7 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "529f07213f",
@@ -783,7 +783,7 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "92f3f8cdff",
@@ -835,11 +835,11 @@
    "integrity_challenge": 1,
    "source_officials": 0,
    "source_outside": 1,
-   "process_action": 0,
+   "process_action": 1,
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "fe291cacae",
@@ -895,7 +895,7 @@
    "intimidation": 0,
    "accepts_result": 1
   },
-  "verified": false
+  "verified": true
  },
  {
   "id": "d080d1e1a4",
@@ -951,6 +951,6 @@
    "intimidation": 0,
    "accepts_result": 0
   },
-  "verified": false
+  "verified": true
  }
 ]
