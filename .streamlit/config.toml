@@ -1,0 +1,38 @@
+# Same night theme as page/template.html and The Economy Feels Fine.
+# One deliberate dark theme: cream ink on warm near-black.
+[theme]
+base = "dark"
+primaryColor = "#4d84ee"
+backgroundColor = "#191817"
+secondaryBackgroundColor = "#24221f"
+textColor = "#fffad7"
+borderColor = "#3a3733"
+linkColor = "#9dbcff"
+font = "'DM Sans', sans-serif"
+headingFont = "'Young Serif', serif"
+codeFont = "'DM Mono', monospace"
+baseRadius = "full"
+showSidebarBorder = false
+
+[[theme.fontFaces]]
+family = "DM Sans"
+url = "https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxRSW3w.woff"
+weight = 400
+
+[[theme.fontFaces]]
+family = "DM Sans"
+url = "https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwARZtRSW3w.woff"
+weight = 700
+
+[[theme.fontFaces]]
+family = "DM Mono"
+url = "https://fonts.gstatic.com/s/dmmono/v16/aFTU7PB1QTsUX8KYthqQAg.woff"
+weight = 400
+
+[[theme.fontFaces]]
+family = "Young Serif"
+url = "https://fonts.gstatic.com/s/youngserif/v2/3qTpojO2nS2VtkB3KtkQZ1t93kA.woff"
+
+[[theme.fontFaces]]
+family = "Source Serif 4"
+url = "https://fonts.gstatic.com/s/sourceserif4/v15/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjihdqnhtdCA.woff"

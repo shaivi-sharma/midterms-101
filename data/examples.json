@@ -1,0 +1,128 @@
+[
+ {
+  "id": "ex1",
+  "kind": "Candidate speech",
+  "speaker": "",
+  "race": "",
+  "date": "",
+  "url": "",
+  "text": "Every legal ballot will be counted, and I'll respect the outcome. Our county clerks are doing their jobs.",
+  "fictional": true,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  }
+ },
+ {
+  "id": "ex2",
+  "kind": "Campaign post",
+  "speaker": "",
+  "race": "",
+  "date": "",
+  "url": "",
+  "text": "The county election board stopped counting our strongest precincts at midnight. This is a rigged count by the people running it.",
+  "fictional": true,
+  "human": {
+   "integrity_challenge": 1,
+   "source_officials": 1,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  }
+ },
+ {
+  "id": "ex3",
+  "kind": "Press release",
+  "speaker": "",
+  "race": "",
+  "date": "",
+  "url": "",
+  "text": "We are filing suit tonight to halt the count. Ballots are being slipped in after hours, and we will not concede a stolen race.",
+  "fictional": true,
+  "human": {
+   "integrity_challenge": 1,
+   "source_officials": 1,
+   "source_outside": 0,
+   "process_action": 1,
+   "intimidation": 0,
+   "accepts_result": 0
+  }
+ },
+ {
+  "id": "ex4",
+  "kind": "Campaign post",
+  "speaker": "",
+  "race": "",
+  "date": "",
+  "url": "",
+  "text": "Foreign bot networks flooded our state with lies about polling places to keep our voters home.",
+  "fictional": true,
+  "human": {
+   "integrity_challenge": 1,
+   "source_officials": 0,
+   "source_outside": 1,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  }
+ },
+ {
+  "id": "ex5",
+  "kind": "Rally remarks",
+  "speaker": "",
+  "race": "",
+  "date": "",
+  "url": "",
+  "text": "Patriots should go down to the counting center and make sure those workers know we're watching their every move.",
+  "fictional": true,
+  "human": {
+   "integrity_challenge": 1,
+   "source_officials": 1,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 1,
+   "accepts_result": 0
+  }
+ },
+ {
+  "id": "ex6",
+  "kind": "Candidate statement",
+  "speaker": "",
+  "race": "",
+  "date": "",
+  "url": "",
+  "text": "The race is within half a point, so we're requesting the recount state law provides. We trust the process.",
+  "fictional": true,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  }
+ },
+ {
+  "id": "ex7",
+  "kind": "Debate-style rebuttal",
+  "speaker": "",
+  "race": "",
+  "date": "",
+  "url": "",
+  "text": "My opponent says the machines were rigged. That's false, and he knows it.",
+  "fictional": true,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  }
+ }
+]
