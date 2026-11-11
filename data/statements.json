@@ -8,12 +8,51 @@
   "date": "2026-11-03",
   "url": "https://www.nbcnews.com/politics/donald-trump/trump-midterm-elections-voting-machines-doubt-rcna607893",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   }
+  ],
+  "why": "The words \"absolutely willing to accept those results\" affirm acceptance of the outcome, with no fraud claim, blame, or action against the count.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  },
   "verified": false
  },
  {
@@ -25,12 +64,51 @@
   "date": "2026-11-04",
   "url": "https://www.cnbc.com/2026/11/03/midterm-elections-2026-live-updates.html",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   }
+  ],
+  "why": "\"They did a good job\" reads as praise for those running the election, affirming the process, with no fraud claim or call to action.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  },
   "verified": false
  },
  {
@@ -42,12 +120,51 @@
   "date": "2026-11-04",
   "url": "https://www.cbsnews.com/live-updates/senate-election-results-2026/",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "\"Republicans had a tough night\" is political commentary on the outcome; it makes no claim about the vote process and does not explicitly concede or affirm the result.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -59,12 +176,51 @@
   "date": "2026-11-04",
   "url": "https://www.cbsnews.com/live-updates/senate-election-results-2026/",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "The phrase \"anybody who can look at the math should be able to know where this is going\" only projects the outcome, with no fraud claim, blame, call to action, threat, concession or affirmation of trust.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -76,12 +232,51 @@
   "date": "2026-11-05",
   "url": "https://www.cbsnews.com/news/mississippi-senate-race-results-2026-midterms/",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "The phrase \"Mississippi has decided to go in a new direction\" is a confident prediction of the outcome, with no claim about how votes are cast, counted or certified and no concession or affirmation of the process.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -93,12 +288,51 @@
   "date": "2026-11-05",
   "url": "https://www.cbsnews.com/news/mississippi-senate-race-results-2026-midterms/",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "\"thousands of votes remain to be counted\" only notes outstanding ballots, with no fraud claim, no call to stop the count and no explicit affirmation of trust or concession.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -110,12 +344,51 @@
   "date": "2026-11-05",
   "url": "https://desotocountynews.com/desoto-county-news/legal-case-hyde-smith-affidavit-ballot-preservation-demand/",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   }
+  ],
+  "why": "The phrases \"must not delay lawful tabulation\" and \"prevent the counting of any legally cast ballot\" support counting every lawful ballot and make no claim of fraud or rigging.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  },
   "verified": false
  },
  {
@@ -127,12 +400,51 @@
   "date": "2026-11-05",
   "url": "https://www.cbsnews.com/live-updates/senate-election-results-2026/",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   }
+  ],
+  "why": "The phrase \"every single lawful ballot is accurately counted\" urges counting every lawful ballot and makes no fraud claim.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  },
   "verified": false
  },
  {
@@ -144,12 +456,53 @@
   "date": "2026-11-05",
   "url": "https://www.thebulwark.com/p/donald-trump-electoral-fraud-claims-after-2026-midterms-are-evidence-proof",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
-  "unstable": [],
+  "claude": {
+   "integrity_challenge": 1,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 1,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "\"They cheated on thousands of votes\" and \"it's a cheat\" assert fraud, but the unspecified \"they\" is not identified as officials or outside actors, and no action, threat or acceptance is stated.",
+  "unstable": [
+   "source_outside"
+  ],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 1,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -161,12 +514,51 @@
   "date": "2026-11-07",
   "url": "https://www.thebulwark.com/p/donald-trump-electoral-fraud-claims-after-2026-midterms-are-evidence-proof",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 1,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "The phrase \"fraudulently put into the Race\" asserts the contest itself was manipulated, but it names no actor and makes no call to block the count or certify.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 1,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -178,12 +570,51 @@
   "date": "2026-11-07",
   "url": "https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "\"The Alaska Race is OVER. Dan Sullivan WON\" declares a winner but neither questions the process nor concedes or affirms the count's legitimacy, so every label is 0.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -195,12 +626,51 @@
   "date": "2026-11-08",
   "url": "https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "\"Confident that Mary will win\" expresses optimism about the outcome without challenging the process or affirming trust in it.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -212,12 +682,51 @@
   "date": "2026-11-09",
   "url": "https://www.inquirer.com/politics/election/trump-claim-midterms-rigged-20261109.html",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 1,
+   "source_officials": 0,
+   "source_outside": 1,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 1,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 1,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 1,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "Scare-quoting 'Election', asking whether it 'was honest', calling early voting 'dumps' 'impossible to win', and saying 'it's all about the machines' together assert a manipulated result blamed on voting machines, which is an outside actor.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 1,
+   "source_officials": 0,
+   "source_outside": 1,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -229,12 +738,51 @@
   "date": "2026-11-09",
   "url": "https://www.nbcnews.com/politics/donald-trump/trump-midterm-elections-voting-machines-doubt-rcna607893",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "Saying the early-vote 'numbers were terrible' describes a bad result for the speaker without claiming fraud, rigging or misconduct, and it neither demands action nor affirms the process.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -246,12 +794,51 @@
   "date": "2026-11-09",
   "url": "https://www.thebulwark.com/p/donald-trump-electoral-fraud-claims-after-2026-midterms-are-evidence-proof",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 1,
+   "source_officials": 0,
+   "source_outside": 1,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 1,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 1,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 1,
+    "source_officials": 0,
+    "source_outside": 1,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "Calling the second candidate 'the fake Dan Sullivan' whose votes 'was supposed to be a vote for the real Dan Sullivan' claims a decoy candidate manipulated the result, but it issues no explicit demand to stop the count or overturn the result.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 1,
+   "source_officials": 0,
+   "source_outside": 1,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  },
  {
@@ -263,29 +850,51 @@
   "date": "2026-11-09",
   "url": "https://www.nbcnews.com/politics/donald-trump/trump-midterm-elections-voting-machines-doubt-rcna607893",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 1
+   }
+  ],
+  "why": "The phrase \"The systems worked\" affirms that the election process was legitimate and raises no challenge.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
-  "verified": false
- },
- {
-  "id": "43563e5c2c",
-  "text": "He can whine all he wants, but nothing will stop this inescapable truth: For the last two years of his presidency, Trump will face the largest Democratic congressional majorities in decades, all because he has been an unprecedented failure,",
-  "speaker": "Sen. Chuck Schumer (D-NY), Democratic leader",
-  "kind": "Post on X, responding to Trump's fraud claims",
-  "race": "National",
-  "date": "2026-11-09",
-  "url": "https://www.aljazeera.com/news/2026/11/9/trump-reverses-stance-alleges-fraud-in-recent-us-midterm-elections",
-  "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
-  "unstable": [],
-  "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 1
+  },
   "verified": false
  },
  {
@@ -297,12 +906,51 @@
   "date": "2026-11-10",
   "url": "https://www.democracydocket.com/news-alerts/in-mississippi-senate-race-tempers-flare-over-aggressive-gop-vote-count-observers/",
   "fictional": false,
-  "claude": null,
-  "claude_runs": [],
-  "why": "",
+  "claude": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
+  "claude_runs": [
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   },
+   {
+    "integrity_challenge": 0,
+    "source_officials": 0,
+    "source_outside": 0,
+    "process_action": 0,
+    "intimidation": 0,
+    "accepts_result": 0
+   }
+  ],
+  "why": "The phrase \"a little intimidation, a little bit of can we find some stuff\" describes someone else's motives without claiming the count is rigged, calling for action against the count, or affirming the result.",
   "unstable": [],
   "rule_problems": [],
-  "human": null,
+  "human": {
+   "integrity_challenge": 0,
+   "source_officials": 0,
+   "source_outside": 0,
+   "process_action": 0,
+   "intimidation": 0,
+   "accepts_result": 0
+  },
   "verified": false
  }
 ]
